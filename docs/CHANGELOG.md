@@ -25,33 +25,45 @@ Kategori:
 
 ---
 
+# VERSI 2.1.0
+
 Tanggal:
 2026-06-22
-
-Versi:
-2.1.0
 
 Status:
 Development
 
 ## Fitur Baru
 
-- Install Laravel Breeze
-- Login System
-- Register System
-- Authentication Middleware
+* Install Laravel Breeze
+* Login System
+* Register System
+* Authentication Middleware
+* Session Authentication
+* Forgot Password Feature
+
+---
 
 ## Perubahan Database
 
-Tambah tabel:
+Migration bawaan Laravel berhasil dijalankan:
 
-- users
-- cache
-- jobs
+* users
+* cache
+* jobs
+
+---
 
 ## Catatan
 
-Authentication dasar berhasil dibuat.
+* Laravel Breeze berhasil diinstall.
+* Halaman Login berhasil dibuat.
+* Halaman Register berhasil dibuat.
+* Sistem Authentication dasar berhasil berjalan.
+* Database berhasil terkoneksi.
+* Migration awal berhasil dijalankan.
+
+---
 
 # VERSI 2.0.0
 
@@ -94,19 +106,17 @@ Membuat rancangan tabel:
 
 ## Catatan
 
-Tahap dokumentasi selesai.
-
-Belum ada coding Laravel.
+* Tahap dokumentasi selesai.
+* Belum ada coding Laravel.
 
 ---
 
-# TEMPLATE PERUBAHAN BERIKUTNYA
+# TEMPLATE VERSI BERIKUTNYA
+
+# VERSI x.x.x
 
 Tanggal:
 YYYY-MM-DD
-
-Versi:
-x.x.x
 
 Status:
 Development
@@ -141,47 +151,7 @@ Hapus:
 
 ## Catatan
 
-...
-
----
-
-# CONTOH
-
-Tanggal:
-2026-07-01
-
-Versi:
-2.1.0
-
-Status:
-Development
-
-## Fitur Baru
-
-* CRUD Guru
-* CRUD Kelas
-
----
-
-## Perbaikan
-
-* Perbaikan validasi login
-
----
-
-## Perubahan Database
-
-Tambah kolom:
-
-teachers.is_bk
-
-teachers.is_piket
-
----
-
-## Catatan
-
-Tahap master data selesai.
+* ...
 
 ---
 
@@ -219,7 +189,7 @@ WAJIB dicatat:
 
 Dengan CHANGELOG yang baik:
 
-* Riwayat proyek dapat dilacak
-* AI dapat memahami perubahan sebelumnya
-* Programmer tidak lupa perubahan yang sudah dilakukan
-* Mempermudah maintenance jangka panjang
+* Riwayat proyek dapat dilacak.
+* AI dapat memahami perubahan sebelumnya.
+* Programmer tidak lupa perubahan yang sudah dilakukan.
+* Mempermudah maintenance jangka panjang.
