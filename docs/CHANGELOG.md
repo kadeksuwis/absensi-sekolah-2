@@ -25,6 +25,34 @@ Kategori:
 
 ---
 
+Tanggal:
+2026-06-22
+
+Versi:
+2.1.0
+
+Status:
+Development
+
+## Fitur Baru
+
+- Install Laravel Breeze
+- Login System
+- Register System
+- Authentication Middleware
+
+## Perubahan Database
+
+Tambah tabel:
+
+- users
+- cache
+- jobs
+
+## Catatan
+
+Authentication dasar berhasil dibuat.
+
 # VERSI 2.0.0
 
 Tanggal:
