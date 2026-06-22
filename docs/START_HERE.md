@@ -1,0 +1,11 @@
+1. Baca PROJECT_RULES.md
+
+2. Baca DATABASE_SCHEMA.md
+
+3. Baca FEATURE_FLOW.md
+
+4. Baca PROJECT_STATUS.md
+
+5. Baca ROADMAP_V2.md
+
+6. Baca CHANGELOG.md
