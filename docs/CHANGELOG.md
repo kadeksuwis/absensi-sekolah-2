@@ -25,6 +25,43 @@ Kategori:
 
 ---
 
+# VERSI 2.2.0
+
+Tanggal:
+2026-06-22
+
+Status:
+Development
+
+## Fitur Baru
+
+- Menambahkan role user
+- Menambahkan status aktif user
+- Membuat tabel teachers
+- Membuat relasi User dan Teacher
+- Membuat Admin Seeder
+- Membuat akun admin default
+
+---
+
+## Perubahan Database
+
+Tambah tabel:
+
+- teachers
+
+Tambah kolom pada users:
+
+- role
+- is_active
+
+---
+
+## Catatan
+
+Fondasi manajemen guru selesai dibuat.
+
+
 # VERSI 2.1.0
 
 Tanggal:
