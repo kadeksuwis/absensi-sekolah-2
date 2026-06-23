@@ -2,9 +2,9 @@
 
 # ABSENSI-SEKOLAH-2
 
-Versi: 2.0
+Versi: 2.2
 
-Status: Planning Phase
+Status: Development Phase
 
 Terakhir Diperbarui: 22 Juni 2026
 
@@ -29,7 +29,7 @@ QR Code menggunakan kartu pelajar siswa dan tetap digunakan selama siswa aktif b
 # INFORMASI TEKNOLOGI
 
 Framework:
-Laravel
+Laravel 12
 
 Database:
 MySQL
@@ -37,8 +37,11 @@ MySQL
 Frontend:
 Bootstrap 5
 
+Authentication:
+Laravel Breeze
+
 Template:
-AdminLTE
+AdminLTE (Belum Dipasang)
 
 Version Control:
 Git + GitHub
@@ -49,35 +52,61 @@ Git + GitHub
 
 Tahap:
 
-Perencanaan dan Dokumentasi
+Autentikasi dan Fondasi Database
 
 Status:
 
-Belum Coding
+Sedang Dikembangkan
 
 ---
 
-# FITUR SELESAI (PERENCANAAN)
+# FITUR SELESAI
 
-✓ Analisis Kebutuhan
-
-✓ Struktur Role
-
-✓ Aturan Sistem
-
-✓ Alur Sistem
+✓ Dokumentasi Proyek
 
 ✓ Struktur Database
 
-✓ Jadwal Sekolah
+✓ Flow Sistem
 
-✓ Hari Libur
+✓ Laravel Install
 
-✓ Monitoring BK
+✓ Database Connection
 
-✓ Riwayat Kelas
+✓ Migration Awal Laravel
 
-✓ QR System
+✓ Laravel Breeze
+
+✓ Login
+
+✓ Logout
+
+✓ Register
+
+✓ Session Authentication
+
+✓ Role User
+
+✓ Status Aktif User
+
+✓ Tabel Teachers
+
+✓ Relasi User → Teacher
+
+✓ Admin Seeder
+
+✓ Akun Admin Default
+
+✓ Login Admin Berhasil
+
+---
+
+# FITUR DALAM PENGERJAAN
+
+□ Middleware Role
+
+□ Dashboard Admin
+
+□ Dashboard Guru
 
 ---
 
@@ -147,6 +176,18 @@ SISTEM
 
 ---
 
+# DATABASE YANG SUDAH DIBUAT
+
+✓ users
+
+✓ cache
+
+✓ jobs
+
+✓ teachers
+
+---
+
 # ROLE SISTEM
 
 Admin
@@ -161,107 +202,40 @@ Atribut Guru:
 
 ---
 
-# STRUKTUR DATABASE
+# PRIORITAS BERIKUTNYA
 
-users
+1. Middleware Role
 
-teachers
+2. Dashboard Admin
 
-students
+3. Dashboard Guru
 
-academic_years
+4. CRUD Guru
 
-school_classes
+5. CRUD Siswa
 
-student_class_histories
+6. CRUD Kelas
 
-attendances
-
-attendance_logs
-
-school_schedules
-
-schedule_overrides
-
-holidays
-
-activity_logs
-
----
-
-# STRUKTUR FOLDER DOKUMENTASI
-
-docs/
-
-├── SYSTEM_REQUIREMENTS.md
-├── PROJECT_RULES.md
-├── DATABASE_SCHEMA.md
-├── FEATURE_FLOW.md
-├── PROJECT_STATUS.md
-├── ROADMAP_V2.md
-└── CHANGELOG.md
-
----
-
-# CATATAN KHUSUS
-
-QR Code tidak berubah saat siswa naik kelas.
-
-Nomor absen dapat berubah setiap tahun ajaran.
-
-Riwayat kelas wajib disimpan.
-
-Admin tidak melakukan scan QR.
-
-Guru melakukan scan QR.
-
-BK merupakan atribut guru.
-
-Wali Kelas merupakan atribut guru.
-
----
-
-# BUG YANG DIKETAHUI
-
-Belum ada.
-
-Karena sistem belum memasuki tahap pengembangan.
-
----
-
-# PRIORITAS SELANJUTNYA
-
-1. Menyelesaikan dokumentasi proyek.
-
-2. Membuat migration database.
-
-3. Membuat model Laravel.
-
-4. Membuat login dan role.
-
-5. Membuat dashboard admin.
-
-6. Membuat master data.
-
-7. Membuat fitur scan QR.
-
-8. Membuat laporan.
+7. Tahun Ajaran
 
 ---
 
 # STATUS KESELURUHAN
 
 Dokumentasi:
-60%
+95%
 
 Database Design:
-90%
+95%
 
-Coding:
-0%
+Backend:
+15%
+
+Frontend:
+5%
 
 Testing:
-0%
+5%
 
 Deployment:
 0%

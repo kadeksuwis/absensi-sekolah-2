@@ -2,33 +2,11 @@
 
 # ABSENSI-SEKOLAH-2
 
-Versi: 2.0
+Versi: 2.2
 
 Status: Aktif
 
 Terakhir Diperbarui: 22 Juni 2026
-
----
-
-# TUJUAN ROADMAP
-
-Dokumen ini digunakan untuk menentukan urutan pengembangan sistem.
-
-Semua fitur harus mengikuti roadmap.
-
-Hindari membuat fitur yang belum masuk prioritas.
-
----
-
-# TARGET AKHIR
-
-Membangun sistem absensi siswa berbasis QR Code yang:
-
-* Stabil
-* Mudah digunakan
-* Siap digunakan sekolah
-* Mudah dikembangkan
-* Memiliki dokumentasi lengkap
 
 ---
 
@@ -37,7 +15,7 @@ Membangun sistem absensi siswa berbasis QR Code yang:
 PERSIAPAN PROYEK
 
 Status:
-Selesai
+SELESAI ✅
 
 Target:
 
@@ -51,61 +29,80 @@ Target:
 
 ✓ Aturan Proyek
 
-Dokumen:
-
-✓ SYSTEM_REQUIREMENTS.md
-
-✓ PROJECT_RULES.md
-
-✓ DATABASE_SCHEMA.md
-
-✓ FEATURE_FLOW.md
-
-✓ PROJECT_STATUS.md
-
-✓ ROADMAP_V2.md
-
-✓ CHANGELOG.md
-
 ---
 
 # FASE 2
 
-AUTENTIKASI DAN ROLE
+AUTENTIKASI DAN FONDASI USER
 
 Status:
-Belum Dimulai
+SELESAI ✅
 
 Target:
 
-□ Laravel Install
+✓ Laravel Install
 
-□ Database Setup
+✓ Database Setup
 
-□ Login
+✓ Laravel Breeze
 
-□ Logout
+✓ Login
 
-□ Middleware
+✓ Logout
 
-□ Role Admin
+✓ Register
 
-□ Role Guru
+✓ User Role
+
+✓ User Active Status
+
+✓ Teacher Table
+
+✓ Teacher Model
+
+✓ User ↔ Teacher Relationship
+
+✓ Admin Seeder
+
+✓ Admin Login
 
 Output:
 
-Admin dapat login.
+Admin dapat login ke sistem.
 
-Guru dapat login.
+Fondasi user dan guru siap digunakan.
 
 ---
 
 # FASE 3
 
+ROLE DAN DASHBOARD
+
+Status:
+SEDANG DIKERJAKAN 🔄
+
+Target:
+
+□ Middleware Role
+
+□ Dashboard Admin
+
+□ Dashboard Guru
+
+□ Dashboard BK
+
+Output:
+
+Hak akses mulai dipisahkan berdasarkan role.
+
+---
+
+# FASE 4
+
 MASTER DATA
 
 Status:
-Belum Dimulai
+BELUM DIMULAI
 
 Target:
 
@@ -123,16 +120,16 @@ Target:
 
 Output:
 
-Data master siap digunakan.
+Seluruh data master siap digunakan.
 
 ---
 
-# FASE 4
+# FASE 5
 
 RIWAYAT KELAS
 
 Status:
-Belum Dimulai
+BELUM DIMULAI
 
 Target:
 
@@ -150,12 +147,12 @@ Riwayat siswa tersimpan.
 
 ---
 
-# FASE 5
+# FASE 6
 
 QR CODE SISWA
 
 Status:
-Belum Dimulai
+BELUM DIMULAI
 
 Target:
 
@@ -165,7 +162,7 @@ Target:
 
 □ Download QR
 
-□ Simpan QR Token
+□ QR Token
 
 Output:
 
@@ -173,12 +170,12 @@ Semua siswa memiliki QR unik.
 
 ---
 
-# FASE 6
+# FASE 7
 
 ABSENSI SISWA
 
 Status:
-Belum Dimulai
+BELUM DIMULAI
 
 Target:
 
@@ -200,12 +197,12 @@ Absensi berjalan normal.
 
 ---
 
-# FASE 7
+# FASE 8
 
 STATUS ABSENSI
 
 Status:
-Belum Dimulai
+BELUM DIMULAI
 
 Target:
 
@@ -229,12 +226,12 @@ Guru dapat memperbarui status.
 
 ---
 
-# FASE 8
+# FASE 9
 
 JADWAL SEKOLAH
 
 Status:
-Belum Dimulai
+BELUM DIMULAI
 
 Target:
 
@@ -252,12 +249,12 @@ Jam sekolah dapat dikontrol.
 
 ---
 
-# FASE 9
+# FASE 10
 
 HARI LIBUR
 
 Status:
-Belum Dimulai
+BELUM DIMULAI
 
 Target:
 
@@ -275,33 +272,12 @@ Absensi otomatis menyesuaikan hari libur.
 
 ---
 
-# FASE 10
-
-DASHBOARD
-
-Status:
-Belum Dimulai
-
-Target:
-
-□ Dashboard Admin
-
-□ Dashboard Guru
-
-□ Dashboard BK
-
-Output:
-
-Monitoring lebih mudah.
-
----
-
 # FASE 11
 
 LAPORAN
 
 Status:
-Belum Dimulai
+BELUM DIMULAI
 
 Target:
 
@@ -315,6 +291,10 @@ Target:
 
 □ Laporan Per Siswa
 
+□ Export Excel
+
+□ Export PDF
+
 Output:
 
 Data siap dicetak.
@@ -323,29 +303,10 @@ Data siap dicetak.
 
 # FASE 12
 
-EXPORT DATA
-
-Status:
-Belum Dimulai
-
-Target:
-
-□ Export Excel
-
-□ Export PDF
-
-Output:
-
-Laporan dapat dibagikan.
-
----
-
-# FASE 13
-
 ACTIVITY LOG
 
 Status:
-Belum Dimulai
+BELUM DIMULAI
 
 Target:
 
@@ -363,59 +324,25 @@ Aktivitas sistem tercatat.
 
 ---
 
-# FASE 14
+# FASE 13
 
 TESTING
 
 Status:
-Belum Dimulai
-
-Target:
-
-□ Uji Login
-
-□ Uji QR
-
-□ Uji Absensi
-
-□ Uji Jadwal
-
-□ Uji Hari Libur
-
-□ Uji Laporan
-
-Output:
-
-Sistem stabil.
+BELUM DIMULAI
 
 ---
 
-# FASE 15
+# FASE 14
 
 VERSI PRODUKSI
 
 Status:
-Belum Dimulai
-
-Target:
-
-□ Perbaikan Bug
-
-□ Optimasi
-
-□ Backup Database
-
-□ Dokumentasi Akhir
-
-Output:
-
-Versi 2.0 siap digunakan.
+BELUM DIMULAI
 
 ---
 
 # FITUR MASA DEPAN
-
-Tidak termasuk target versi 2.0
 
 * Scan Pulang
 * WhatsApp Gateway
@@ -424,7 +351,3 @@ Tidak termasuk target versi 2.0
 * Fingerprint
 * Face Recognition
 * Notifikasi BK Otomatis
-
-Status:
-
-Future Development
