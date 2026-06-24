@@ -2,11 +2,11 @@
 
 # ABSENSI-SEKOLAH-2
 
-Versi: 2.2
+Versi: 2.4
 
 Status: Development Phase
 
-Terakhir Diperbarui: 22 Juni 2026
+Terakhir Diperbarui: 24 Juni 2026
 
 ---
 
@@ -52,7 +52,7 @@ Git + GitHub
 
 Tahap:
 
-Autentikasi dan Fondasi Database
+Master Data
 
 Status:
 
@@ -96,29 +96,33 @@ Sedang Dikembangkan
 
 ✓ Akun Admin Default
 
-✓ Login Admin Berhasil
+✓ Akun Guru Test
+
+✓ Login Admin
+
+✓ Login Guru
+
+✓ DashboardController
+
+✓ RoleMiddleware
+
+✓ Dashboard Admin
+
+✓ Dashboard Guru
+
+✓ Redirect Dashboard Berdasarkan Role
 
 ---
 
 # FITUR DALAM PENGERJAAN
 
-□ Middleware Role
-
-□ Dashboard Admin
-
-□ Dashboard Guru
-
----
-
-# FITUR BELUM DIBUAT
-
 MASTER DATA
 
-□ Data Guru
+□ CRUD Guru
 
-□ Data Siswa
+□ CRUD Siswa
 
-□ Data Kelas
+□ CRUD Kelas
 
 □ Tahun Ajaran
 
@@ -126,15 +130,25 @@ MASTER DATA
 
 ---
 
+# FITUR BELUM DIBUAT
+
 ABSENSI
 
 □ Scan QR
 
 □ Absensi Harian
 
-□ Perubahan Status
+□ Status Hadir
 
-□ Log Perubahan
+□ Status Terlambat
+
+□ Status Sakit
+
+□ Status Izin
+
+□ Status Alpha
+
+□ Status Dispen
 
 □ Riwayat Absensi
 
@@ -144,7 +158,9 @@ JADWAL
 
 □ Jadwal Mingguan
 
-□ Jadwal Khusus
+□ Jadwal Default
+
+□ Override Jadwal
 
 □ Hari Libur
 
@@ -158,6 +174,10 @@ LAPORAN
 
 □ Laporan Tahunan
 
+□ Laporan Per Kelas
+
+□ Laporan Per Siswa
+
 □ Export Excel
 
 □ Export PDF
@@ -166,13 +186,11 @@ LAPORAN
 
 SISTEM
 
+□ Dashboard BK
+
 □ Activity Log
 
-□ Dashboard Admin
-
-□ Dashboard Guru
-
-□ Dashboard BK
+□ Backup Database
 
 ---
 
@@ -204,38 +222,50 @@ Atribut Guru:
 
 # PRIORITAS BERIKUTNYA
 
-1. Middleware Role
+1. CRUD Guru
 
-2. Dashboard Admin
+2. CRUD Siswa
 
-3. Dashboard Guru
+3. CRUD Kelas
 
-4. CRUD Guru
+4. Tahun Ajaran
 
-5. CRUD Siswa
+5. User Management
 
-6. CRUD Kelas
+6. Riwayat Kelas Siswa
 
-7. Tahun Ajaran
+7. QR Code Siswa
 
 ---
 
 # STATUS KESELURUHAN
 
 Dokumentasi:
-95%
+100%
 
 Database Design:
 95%
 
 Backend:
-15%
+25%
 
 Frontend:
-5%
+10%
 
 Testing:
-5%
+10%
 
 Deployment:
 0%
+
+---
+
+# CATATAN PENTING
+
+Dashboard Admin dan Dashboard Guru sudah berjalan.
+
+Role Middleware sudah berjalan.
+
+Admin dan Guru berhasil login ke dashboard masing-masing.
+
+Tahap berikutnya fokus ke Master Data.

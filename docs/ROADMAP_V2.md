@@ -2,11 +2,33 @@
 
 # ABSENSI-SEKOLAH-2
 
-Versi: 2.2
+Versi: 2.4
 
 Status: Aktif
 
-Terakhir Diperbarui: 22 Juni 2026
+Terakhir Diperbarui: 24 Juni 2026
+
+---
+
+# TUJUAN ROADMAP
+
+Dokumen ini digunakan untuk menentukan urutan pengembangan sistem.
+
+Semua fitur harus mengikuti roadmap.
+
+Hindari membuat fitur yang belum masuk prioritas.
+
+---
+
+# TARGET AKHIR
+
+Membangun sistem absensi siswa berbasis QR Code yang:
+
+* Stabil
+* Mudah digunakan
+* Siap digunakan sekolah
+* Mudah dikembangkan
+* Memiliki dokumentasi lengkap
 
 ---
 
@@ -28,6 +50,10 @@ Target:
 ✓ Flow Sistem
 
 ✓ Aturan Proyek
+
+Output:
+
+Dokumentasi proyek lengkap.
 
 ---
 
@@ -68,9 +94,7 @@ Target:
 
 Output:
 
-Admin dapat login ke sistem.
-
-Fondasi user dan guru siap digunakan.
+Fondasi user dan autentikasi selesai.
 
 ---
 
@@ -79,21 +103,25 @@ Fondasi user dan guru siap digunakan.
 ROLE DAN DASHBOARD
 
 Status:
-SEDANG DIKERJAKAN 🔄
+SELESAI ✅
 
 Target:
 
-□ Middleware Role
+✓ RoleMiddleware
 
-□ Dashboard Admin
+✓ DashboardController
 
-□ Dashboard Guru
+✓ Dashboard Admin
 
-□ Dashboard BK
+✓ Dashboard Guru
+
+✓ Redirect Dashboard Berdasarkan Role
+
+✓ Akun Guru Test
 
 Output:
 
-Hak akses mulai dipisahkan berdasarkan role.
+Admin dan Guru memiliki dashboard masing-masing.
 
 ---
 
@@ -102,15 +130,15 @@ Hak akses mulai dipisahkan berdasarkan role.
 MASTER DATA
 
 Status:
-BELUM DIMULAI
+SEDANG DIKERJAKAN 🔄
 
 Target:
 
-□ Data Guru
+□ CRUD Guru
 
-□ Data Siswa
+□ CRUD Siswa
 
-□ Data Kelas
+□ CRUD Kelas
 
 □ Tahun Ajaran
 
@@ -331,6 +359,24 @@ TESTING
 Status:
 BELUM DIMULAI
 
+Target:
+
+□ Uji Login
+
+□ Uji Role
+
+□ Uji Dashboard
+
+□ Uji Master Data
+
+□ Uji QR
+
+□ Uji Absensi
+
+Output:
+
+Sistem stabil.
+
 ---
 
 # FASE 14
@@ -340,9 +386,25 @@ VERSI PRODUKSI
 Status:
 BELUM DIMULAI
 
+Target:
+
+□ Optimasi
+
+□ Backup Database
+
+□ Dokumentasi Akhir
+
+□ Deployment
+
+Output:
+
+Versi produksi siap digunakan.
+
 ---
 
 # FITUR MASA DEPAN
+
+Tidak termasuk target versi 2.x
 
 * Scan Pulang
 * WhatsApp Gateway
