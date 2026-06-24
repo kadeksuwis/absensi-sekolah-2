@@ -52,6 +52,92 @@ Hapus:
 
 ---
 
+# VERSI 2.6.0
+
+Tanggal:
+2026-06-24
+
+Status:
+Development
+
+## Fitur Baru
+
+* CRUD Data Guru selesai
+* Tambah Guru
+* Edit Guru
+* Hapus Guru
+* Relasi User dan Teacher
+* CRUD Data Kelas
+* Tambah Kelas
+* Edit Kelas
+* Hapus Kelas
+* Relasi Wali Kelas ke Teacher
+
+## Perubahan Database
+
+### teachers
+
+* user_id
+* nama
+* nip
+* is_bk
+* is_piket
+
+### school_classes
+
+* nama_kelas
+* wali_teacher_id
+
+## Perbaikan
+
+* URL admin menggunakan prefix `/admin`
+* Route guru menggunakan prefix `/guru`
+* Halaman edit guru sudah berfungsi
+* Halaman hapus guru sudah berfungsi
+* Dropdown wali kelas menampilkan data guru
+* Proteksi database satu guru hanya boleh menjadi wali satu kelas
+
+## Catatan
+
+* Fitur jumlah siswa pada Data Kelas ditunda sampai tabel siswa dibuat.
+* Fitur lihat siswa per kelas ditunda sampai modul siswa selesai.
+* Filter dropdown wali kelas agar tidak menampilkan wali yang sudah digunakan sedang dikerjakan.
+
+## Tahap Berikutnya
+
+1. Selesaikan filter wali kelas.
+2. Buat modul Data Siswa.
+3. Buat relasi siswa dengan kelas.
+4. Buat import Excel siswa.
+5. Buat QR Token siswa.
+6. Buat fitur absensi QR.
+
+
+# VERSI 2.5.0
+
+Tanggal:
+2026-06-24
+
+Status:
+Development
+
+## Fitur Baru
+
+- CRUD Data Guru
+- Form Tambah Guru
+- Penyimpanan User Guru
+- Penyimpanan Teacher
+- Relasi User dan Teacher
+
+## Perubahan Database
+
+Tidak ada
+
+## Catatan
+
+Master Data Guru mulai dikembangkan.
+Data guru berhasil disimpan ke tabel users dan teachers.
+
 # VERSI 2.4.0
 
 Tanggal:
