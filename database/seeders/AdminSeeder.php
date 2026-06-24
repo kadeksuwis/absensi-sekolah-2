@@ -4,12 +4,10 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         User::firstOrCreate(
@@ -18,8 +16,20 @@ class AdminSeeder extends Seeder
             ],
             [
                 'name' => 'Administrator',
-                'password' => 'password',
+                'password' => Hash::make('password'),
                 'role' => 'admin',
+                'is_active' => true,
+            ]
+        );
+
+        User::firstOrCreate(
+            [
+                'email' => 'guru@smp9.local',
+            ],
+            [
+                'name' => 'Guru Test',
+                'password' => Hash::make('password'),
+                'role' => 'guru',
                 'is_active' => true,
             ]
         );

@@ -25,6 +25,33 @@ Kategori:
 
 ---
 
+Tanggal:
+2026-06-23
+
+Versi:
+2.3.0
+
+Status:
+Development
+
+## Fitur Baru
+
+- DashboardController
+- RoleMiddleware
+- Redirect dashboard berdasarkan role
+- Dashboard Admin
+- Dashboard Guru
+
+## Perubahan Database
+
+Tidak ada
+
+## Catatan
+
+Role admin berhasil diarahkan ke dashboard admin.
+Fondasi role system selesai dibuat.
+
+
 # VERSI 2.2.0
 
 Tanggal:
