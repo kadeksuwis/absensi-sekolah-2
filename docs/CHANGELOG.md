@@ -52,6 +52,60 @@ Hapus:
 
 ---
 
+# VERSI 2.7.0
+
+Tanggal:
+2026-06-25
+
+Status:
+Development
+
+## Fitur Baru
+
+* Modul Data Siswa
+* Halaman Data Siswa
+* Tambah Siswa
+* Relasi Student ke SchoolClass
+* Generate QR Token otomatis (UUID)
+* Validasi NIS unik
+* Menu Data Siswa pada Admin
+
+## Perubahan Database
+
+### students
+
+* nis
+* nama
+* class_id
+* qr_token
+
+## Perbaikan
+
+* Route Data Siswa menggunakan prefix `/admin`
+* Dropdown kelas mengambil data dari tabel school_classes
+* QR Token dibuat otomatis menggunakan UUID
+* Relasi Student ↔ SchoolClass berhasil diterapkan
+
+## Catatan
+
+* Edit siswa masih dalam pengembangan.
+* Hapus siswa masih dalam pengembangan.
+* Import Excel siswa belum dibuat.
+* QR Code fisik belum dibuat.
+* Scan QR Absensi belum dibuat.
+* Halaman daftar siswa per kelas masih tahap berikutnya.
+
+## Tahap Berikutnya
+
+1. Selesaikan Edit Siswa.
+2. Selesaikan Hapus Siswa.
+3. Halaman siswa berdasarkan kelas.
+4. Import Excel siswa.
+5. Generate QR Code.
+6. Scan QR Absensi.
+7. Dashboard statistik siswa.
+
+
 # VERSI 2.6.0
 
 Tanggal:

@@ -75,7 +75,9 @@
 
             <a href="{{ route('teachers.index') }}">Data Guru</a>
 
-            <a href="#">Data Siswa</a>
+            <a href="{{ route('students.index') }}">
+                Data Siswa
+            </a>
 
             <a href="{{ route('classes.index') }}">Data Kelas</a>
 

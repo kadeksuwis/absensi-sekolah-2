@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\SchoolClassController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -61,6 +62,23 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::delete('/admin/classes/{id}', [SchoolClassController::class, 'destroy'])
         ->name('classes.destroy');
+    Route::get('/admin/students', [StudentController::class, 'index'])
+        ->name('students.index');
+
+    Route::get('/admin/students/create', [StudentController::class, 'create'])
+        ->name('students.create');
+
+    Route::post('/admin/students', [StudentController::class, 'store'])
+        ->name('students.store');
+
+    Route::get('/admin/students/{id}/edit', [StudentController::class, 'edit'])
+        ->name('students.edit');
+
+    Route::put('/admin/students/{id}', [StudentController::class, 'update'])
+        ->name('students.update');
+
+    Route::delete('/admin/students/{id}', [StudentController::class, 'destroy'])
+        ->name('students.destroy');
 });
 
 Route::middleware(['auth', 'role:guru'])->group(function () {
