@@ -1,109 +1,112 @@
-@extends('layouts.admin')
+@extends('adminlte::page')
 
 @section('title', 'Tambah Siswa')
 
+@section('content_header')
+
+    <h1>
+        <i class="fas fa-user-plus text-danger"></i>
+        Tambah Siswa
+    </h1>
+
+@stop
+
 @section('content')
 
-    <div class="container-fluid">
+    <div class="card card-danger">
 
-        <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="card-header">
 
-            <div>
-                <h3 class="mb-0">
-                    <i class="fas fa-user-plus text-danger"></i>
-                    Tambah Siswa
-                </h3>
+            <h3 class="card-title">
 
-                <small class="text-muted">
-                    Tambahkan data siswa baru
-                </small>
-            </div>
+                Form Data Siswa
 
-            <a href="{{ route('students.index') }}" class="btn btn-secondary">
-                <i class="fas fa-arrow-left"></i>
-                Kembali
-            </a>
+            </h3>
 
         </div>
 
-        <div class="card shadow-sm">
+        <form action="{{ route('students.store') }}" method="POST">
 
-            <div class="card-header bg-danger text-white">
-                Form Data Siswa
-            </div>
+            @csrf
 
-            <form action="{{ route('students.store') }}" method="POST">
+            <div class="card-body">
 
-                @csrf
+                @if ($errors->any())
 
-                <div class="card-body">
+                    <div class="alert alert-danger">
 
-                    <div class="mb-3">
+                        <ul class="mb-0">
 
-                        <label class="form-label">
-                            NIS
-                        </label>
-
-                        <input type="text" name="nis" class="form-control" value="{{ old('nis') }}" required>
-
-                    </div>
-
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Nama Siswa
-                        </label>
-
-                        <input type="text" name="nama" class="form-control" value="{{ old('nama') }}" required>
-
-                    </div>
-
-                    <div class="mb-3">
-
-                        <label class="form-label">
-                            Kelas
-                        </label>
-
-                        <select name="class_id" class="form-select" required>
-
-                            <option value="">
-                                -- Pilih Kelas --
-                            </option>
-
-                            @foreach ($classes as $class)
-                                <option value="{{ $class->id }}" {{ old('class_id') == $class->id ? 'selected' : '' }}>
-                                    {{ $class->nama_kelas }}
-                                </option>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
                             @endforeach
 
-                        </select>
+                        </ul>
 
                     </div>
 
-                </div>
+                @endif
 
-                <div class="card-footer">
+                <div class="form-group">
 
-                    <button class="btn btn-danger">
+                    <label>NIS</label>
 
-                        <i class="fas fa-save"></i>
-
-                        Simpan
-
-                    </button>
-
-                    <a href="{{ route('students.index') }}" class="btn btn-secondary">
-
-                        Batal
-
-                    </a>
+                    <input type="text" name="nis" class="form-control" value="{{ old('nis') }}" required>
 
                 </div>
 
-            </form>
+                <div class="form-group">
 
-        </div>
+                    <label>Nama Siswa</label>
+
+                    <input type="text" name="nama" class="form-control" value="{{ old('nama') }}" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Kelas</label>
+
+                    <select name="class_id" class="form-control" required>
+
+                        <option value="">
+                            -- Pilih Kelas --
+                        </option>
+
+                        @foreach ($classes as $class)
+                            <option value="{{ $class->id }}" {{ old('class_id') == $class->id ? 'selected' : '' }}>
+
+                                {{ $class->nama_kelas }}
+
+                            </option>
+                        @endforeach
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+
+                <button type="submit" class="btn btn-danger">
+
+                    <i class="fas fa-save"></i>
+
+                    Simpan
+
+                </button>
+
+                <a href="{{ route('students.index') }}" class="btn btn-secondary">
+
+                    Kembali
+
+                </a>
+
+            </div>
+
+        </form>
 
     </div>
 
-@endsection
+@stop

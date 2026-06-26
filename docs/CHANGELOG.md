@@ -52,6 +52,84 @@ Hapus:
 
 ---
 
+# VERSI 2.8.0
+
+Tanggal:
+2026-06-26
+
+Status:
+Development
+
+## Fitur Baru
+
+* CRUD Data Siswa selesai
+* Halaman Data Siswa menggunakan AdminLTE
+* Halaman Tambah Siswa menggunakan AdminLTE
+* Halaman Edit Siswa menggunakan AdminLTE
+* Fitur Hapus Siswa selesai
+* Konfirmasi hapus menggunakan SweetAlert2
+* CRUD Guru diperbarui menggunakan AdminLTE
+* Halaman Data Guru diperbarui
+* Halaman Tambah Guru diperbarui
+* Halaman Edit Guru diperbarui
+* Badge Role Guru mendukung lebih dari satu status (BK dan Piket)
+
+---
+
+## Perbaikan
+
+* Berhasil migrasi dari layout manual ke AdminLTE.
+* Tampilan CRUD menjadi lebih konsisten.
+* Tombol Edit dan Hapus menggunakan icon Font Awesome.
+* Perbaikan form Edit Guru.
+* Perbaikan form Edit Siswa.
+* Perbaikan route CRUD Guru.
+* Perbaikan route CRUD Siswa.
+* Perbaikan proses delete menggunakan method DELETE.
+* Perbaikan SweetAlert agar submit form berjalan dengan benar.
+* Role Guru sekarang dapat menampilkan BK dan Piket secara bersamaan.
+* Pencarian Data Guru dan Data Siswa tetap berfungsi setelah migrasi ke AdminLTE.
+
+---
+
+## Perubahan Database
+
+Tambah:
+
+* Tidak ada.
+
+Ubah:
+
+* Tidak ada.
+
+Hapus:
+
+* Tidak ada.
+
+---
+
+## Catatan
+
+* Seluruh CRUD Master Data (Guru, Kelas, Siswa) sudah menggunakan tampilan AdminLTE.
+* Fondasi tampilan V2 yang lama sudah mulai digantikan dengan struktur baru yang lebih bersih.
+* Struktur proyek mulai distandarkan agar mudah dikembangkan pada modul berikutnya.
+
+---
+
+## Tahap Berikutnya
+
+1. Menyelesaikan penyempurnaan CRUD Guru.
+2. Menyelesaikan penyempurnaan CRUD Kelas.
+3. Dashboard Statistik Admin.
+4. Import Excel Siswa.
+5. Generate QR Code Siswa.
+6. Scan QR Absensi.
+7. Absensi Masuk dan Pulang.
+8. Riwayat Absensi.
+9. Monitoring BK.
+10. Laporan.
+
+
 # VERSI 2.7.0
 
 Tanggal:

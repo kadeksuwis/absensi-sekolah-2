@@ -1,63 +1,253 @@
-@extends('layouts.admin')
+@extends('adminlte::page')
+
+@section('title', 'Data Guru')
+
+@section('content_header')
+
+    <div class="d-flex justify-content-between">
+
+        <div>
+
+            <h1 class="mb-1">
+
+                <i class="fas fa-chalkboard-teacher text-danger"></i>
+
+                Data Guru
+
+            </h1>
+
+            <small class="text-muted">
+
+                Master Data Guru SMPN 9 Denpasar
+
+            </small>
+
+        </div>
+
+        <div>
+
+            <a href="{{ route('teachers.create') }}" class="btn btn-danger">
+
+                <i class="fas fa-plus"></i>
+
+                Tambah Guru
+
+            </a>
+
+        </div>
+
+    </div>
+
+@stop
+
 
 @section('content')
-    <h1>Data Guru</h1>
 
-    <p>
-        <a href="{{ route('teachers.create') }}">
-            Tambah Guru
-        </a>
-    </p>
+    @if (session('success'))
+        <div class="alert alert-success">
 
-    <table border="1" cellpadding="10" cellspacing="0">
+            <i class="fas fa-check-circle"></i>
 
-        <tr>
-            <th>Nama</th>
-            <th>Email</th>
-            <th>NIP</th>
-            <th>BK</th>
-            <th>Piket</th>
-            <th>Aksi</th>
-        </tr>
+            {{ session('success') }}
 
-        @foreach ($teachers as $teacher)
-            <tr>
+        </div>
+    @endif
 
-                <td>{{ $teacher->nama }}</td>
 
-                <td>{{ $teacher->user->email }}</td>
+    <div class="card card-danger card-outline">
 
-                <td>{{ $teacher->nip }}</td>
+        <div class="card-header">
 
-                <td>
-                    {{ $teacher->is_bk ? 'Ya' : 'Tidak' }}
-                </td>
+            <div class="row">
 
-                <td>
-                    {{ $teacher->is_piket ? 'Ya' : 'Tidak' }}
-                </td>
-                <td>
+                <div class="col-md-6">
 
-                    <a href="{{ route('teachers.edit', $teacher->id) }}">
-                        Edit
-                    </a>
+                    <h3 class="card-title">
 
-                    |
+                        Daftar Guru
 
-                    <form action="{{ route('teachers.destroy', $teacher->id) }}" method="POST" style="display:inline;">
-                        @csrf
-                        @method('DELETE')
+                    </h3>
 
-                        <button type="submit" onclick="return confirm('Yakin hapus guru?')">
-                            Hapus
-                        </button>
+                </div>
 
-                    </form>
+                <div class="col-md-6">
 
-                </td>
+                    <input type="text" id="searchTeacher" class="form-control" placeholder="Cari Nama atau NIP...">
 
-            </tr>
-        @endforeach
+                </div>
 
-    </table>
-@endsection
+            </div>
+
+        </div>
+
+
+        <div class="card-body table-responsive p-0">
+
+            <table class="table table-hover table-bordered table-striped mb-0" id="teacherTable">
+
+                <thead>
+
+                    <tr class="text-center">
+
+                        <th width="60">No</th>
+
+                        <th>Nama Guru</th>
+
+                        <th width="170">NIP</th>
+
+                        <th width="120">Role</th>
+
+                        <th width="170">Aksi</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @forelse($teachers as $teacher)
+                        <tr>
+
+                            <td class="text-center">
+
+                                {{ $loop->iteration }}
+
+                            </td>
+
+                            <td>
+
+                                {{ $teacher->nama }}
+
+                            </td>
+
+                            <td>
+
+                                {{ $teacher->nip ?? '-' }}
+
+                            </td>
+
+                            <td class="text-center">
+
+                                @php
+                                    $roles = [];
+                                @endphp
+
+                                @if ($teacher->is_bk)
+                                    @php
+                                        $roles[] = 'BK';
+                                    @endphp
+                                @endif
+
+                                @if ($teacher->is_piket)
+                                    @php
+                                        $roles[] = 'Piket';
+                                    @endphp
+                                @endif
+
+                                @if (empty($roles))
+                                    <span class="badge badge-primary">
+
+                                        Guru
+
+                                    </span>
+                                @else
+                                    @foreach ($roles as $role)
+                                        @if ($role == 'BK')
+                                            <span class="badge badge-info">
+
+                                                BK
+
+                                            </span>
+                                        @endif
+
+                                        @if ($role == 'Piket')
+                                            <span class="badge badge-warning">
+
+                                                Piket
+
+                                            </span>
+                                        @endif
+                                    @endforeach
+                                @endif
+
+                            </td>
+
+                            <td class="text-center">
+
+                                <a href="{{ route('teachers.edit', $teacher->id) }}" class="btn btn-warning btn-sm">
+
+                                    <i class="fas fa-edit"></i>
+
+                                </a>
+
+                                <form action="{{ route('teachers.destroy', $teacher->id) }}" method="POST" class="d-inline"
+                                    onsubmit="return confirm('Yakin ingin menghapus guru ini?')">
+
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" class="btn btn-danger btn-sm">
+
+                                        <i class="fas fa-trash"></i>
+
+                                    </button>
+
+                                </form>
+
+                            </td>
+
+                        </tr>
+
+                    @empty
+
+                        <tr>
+
+                            <td colspan="5" class="text-center text-muted py-4">
+
+                                Belum ada data guru.
+
+                            </td>
+
+                        </tr>
+                    @endforelse
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="card-footer">
+
+            <strong>Total Data :</strong>
+
+            {{ $teachers->count() }}
+
+        </div>
+
+    </div>
+
+@stop
+
+
+@section('js')
+
+    <script>
+        document.getElementById('searchTeacher').addEventListener('keyup', function() {
+
+            let value = this.value.toLowerCase();
+
+            let rows = document.querySelectorAll('#teacherTable tbody tr');
+
+            rows.forEach(function(row) {
+
+                row.style.display = row.innerText.toLowerCase().includes(value) ?
+                    '' :
+                    'none';
+
+            });
+
+        });
+    </script>
+
+@stop

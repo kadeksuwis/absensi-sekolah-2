@@ -1,75 +1,187 @@
-<!DOCTYPE html>
-<html>
+@extends('adminlte::page')
 
-<head>
-    <title>Tambah Guru</title>
-</head>
+@section('title', 'Tambah Guru')
 
-<body>
+@section('content_header')
 
-    <h1>Tambah Guru</h1>
-
-    <form method="POST" action="{{ route('teachers.store') }}">
-        @csrf
+    <div class="d-flex justify-content-between">
 
         <div>
-            <label>Nama Guru</label>
-            <br>
-            <input type="text" name="nama" required>
-        </div>
 
-        <br>
+            <h1 class="mb-1">
 
-        <div>
-            <label>NIP</label>
-            <br>
-            <input type="text" name="nip">
-        </div>
+                <i class="fas fa-user-plus text-danger"></i>
 
-        <br>
+                Tambah Guru
 
-        <div>
-            <label>Email</label>
-            <br>
-            <input type="email" name="email" required>
-        </div>
+            </h1>
 
-        <br>
+            <small class="text-muted">
 
-        <div>
-            <label>Password</label>
-            <br>
-            <input type="password" name="password" required>
-        </div>
+                Tambahkan data guru baru
 
-        <br>
+            </small>
 
-        <div>
-            <label>
-                <input type="checkbox" name="is_bk">
-                Guru BK
-            </label>
         </div>
 
         <div>
-            <label>
-                <input type="checkbox" name="is_piket">
-                Guru Piket
-            </label>
+
+            <a href="{{ route('teachers.index') }}" class="btn btn-secondary">
+
+                <i class="fas fa-arrow-left"></i>
+
+                Kembali
+
+            </a>
+
         </div>
 
-        <br>
+    </div>
 
-        <button type="submit">
-            Simpan
-        </button>
+@stop
 
-        <a href="/teachers">
-            Kembali
-        </a>
 
-    </form>
+@section('content')
 
-</body>
+    @if ($errors->any())
 
-</html>
+        <div class="alert alert-danger">
+
+            <strong>Terjadi Kesalahan!</strong>
+
+            <ul class="mb-0 mt-2">
+
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+
+            </ul>
+
+        </div>
+
+    @endif
+
+
+    <div class="card card-danger card-outline">
+
+        <div class="card-header">
+
+            <h3 class="card-title">
+
+                Form Data Guru
+
+            </h3>
+
+        </div>
+
+        <form action="{{ route('teachers.store') }}" method="POST">
+
+            @csrf
+
+            <div class="card-body">
+
+                <div class="form-group">
+
+                    <label>Nama Guru</label>
+
+                    <input type="text" name="nama" class="form-control" value="{{ old('nama') }}"
+                        placeholder="Masukkan Nama Guru" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>NIP</label>
+
+                    <input type="text" name="nip" class="form-control" value="{{ old('nip') }}"
+                        placeholder="Masukkan NIP">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Email</label>
+
+                    <input type="email" name="email" class="form-control" value="{{ old('email') }}"
+                        placeholder="Masukkan Email" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Password</label>
+
+                    <input type="password" name="password" class="form-control" placeholder="Masukkan Password" required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Konfirmasi Password</label>
+
+                    <input type="password" name="password_confirmation" class="form-control" placeholder="Ulangi Password"
+                        required>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Status Guru</label>
+
+                    <div class="mt-2">
+
+                        <div class="custom-control custom-checkbox">
+
+                            <input type="checkbox" class="custom-control-input" id="is_bk" name="is_bk" value="1"
+                                {{ old('is_bk') ? 'checked' : '' }}>
+
+                            <label class="custom-control-label" for="is_bk">
+
+                                Guru BK
+
+                            </label>
+
+                        </div>
+
+                        <div class="custom-control custom-checkbox mt-2">
+
+                            <input type="checkbox" class="custom-control-input" id="is_piket" name="is_piket"
+                                value="1" {{ old('is_piket') ? 'checked' : '' }}>
+
+                            <label class="custom-control-label" for="is_piket">
+
+                                Guru Piket
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+
+                <button type="submit" class="btn btn-danger">
+
+                    <i class="fas fa-save"></i>
+
+                    Simpan
+
+                </button>
+
+                <a href="{{ route('teachers.index') }}" class="btn btn-secondary">
+
+                    Batal
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+@stop
