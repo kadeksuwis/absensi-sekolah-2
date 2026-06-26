@@ -52,6 +52,89 @@ Hapus:
 
 ---
 
+# VERSI 2.9.0
+
+Tanggal:
+2026-06-26
+
+Status:
+Development
+
+## Fitur Baru
+
+* CRUD Data Guru disempurnakan.
+* CRUD Data Kelas disempurnakan.
+* CRUD Data Siswa disempurnakan.
+* Validasi NIS unik saat tambah dan edit siswa.
+* Validasi email guru.
+* Success Message untuk seluruh CRUD.
+* Konfirmasi hapus menggunakan SweetAlert.
+* Badge Role Guru mendukung BK dan Piket secara bersamaan.
+* Filter Wali Kelas agar tidak dapat dipilih lebih dari satu kelas.
+* Jumlah siswa pada Data Kelas dihitung otomatis.
+* Tampilan seluruh Master Data menggunakan AdminLTE.
+
+---
+
+## Perbaikan
+
+* Perbaikan validasi Data Guru.
+* Perbaikan validasi Data Siswa.
+* Perbaikan validasi Data Kelas.
+* Perbaikan proses Update Guru.
+* Perbaikan proses Update Siswa.
+* Perbaikan proses Update Kelas.
+* Perbaikan proses Delete Guru.
+* Perbaikan proses Delete Siswa.
+* Perbaikan proses Delete Kelas.
+* Perbaikan relasi SchoolClass dengan Student.
+* Perbaikan relasi SchoolClass dengan Teacher.
+* Perbaikan filter pilihan Wali Kelas.
+* Perbaikan tampilan Badge Role Guru.
+
+---
+
+## Perubahan Database
+
+Tambah:
+
+* Tidak ada.
+
+Ubah:
+
+* Tidak ada.
+
+Hapus:
+
+* Tidak ada.
+
+---
+
+## Catatan
+
+* Modul Master Data telah selesai dan stabil.
+* CRUD Guru telah selesai.
+* CRUD Siswa telah selesai.
+* CRUD Kelas telah selesai.
+* Seluruh halaman telah menggunakan tampilan AdminLTE.
+* Tahap selanjutnya berfokus pada modul Tahun Ajaran sebagai fondasi sebelum implementasi QR Code dan Absensi.
+
+---
+
+## Tahap Berikutnya
+
+1. Tahun Ajaran.
+2. User Management.
+3. Riwayat Kelas Siswa.
+4. Generate QR Code.
+5. Scan QR Absensi.
+6. Absensi Harian.
+7. Jadwal Sekolah.
+8. Hari Libur.
+9. Monitoring BK.
+10. Laporan.
+11. Activity Log.
+
 # VERSI 2.8.0
 
 Tanggal:

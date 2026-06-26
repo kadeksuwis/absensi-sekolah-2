@@ -2,11 +2,11 @@
 
 # ABSENSI-SEKOLAH-2
 
-Versi: 2.4
+Versi: 2.9
 
 Status: Development Phase
 
-Terakhir Diperbarui: 24 Juni 2026
+Terakhir Diperbarui: 26 Juni 2026
 
 ---
 
@@ -112,17 +112,39 @@ Sedang Dikembangkan
 
 ✓ Redirect Dashboard Berdasarkan Role
 
----
+✓ CRUD Guru
+
+✓ CRUD Siswa
+
+✓ CRUD Kelas
+
+✓ Relasi Guru ↔ User
+
+✓ Relasi Siswa ↔ Kelas
+
+✓ Validasi Data Guru
+
+✓ Validasi Data Siswa
+
+✓ Validasi Data Kelas
+
+✓ Validasi NIS Unik
+
+✓ QR Token Otomatis (UUID)
+
+✓ Filter Wali Kelas
+
+✓ Badge Multi Role Guru (BK & Piket)
+
+✓ SweetAlert Konfirmasi Hapus
+
+✓ Success Message CRUD
+
+✓ Tampilan AdminLTE untuk seluruh Master Data
 
 # FITUR DALAM PENGERJAAN
 
 MASTER DATA
-
-□ CRUD Guru
-
-□ CRUD Siswa
-
-□ CRUD Kelas
 
 □ Tahun Ajaran
 
@@ -198,11 +220,15 @@ SISTEM
 
 ✓ users
 
+✓ teachers
+
+✓ school_classes
+
+✓ students
+
 ✓ cache
 
 ✓ jobs
-
-✓ teachers
 
 ---
 
@@ -222,19 +248,25 @@ Atribut Guru:
 
 # PRIORITAS BERIKUTNYA
 
-1. CRUD Guru
+1. Tahun Ajaran
 
-2. CRUD Siswa
+2. User Management
 
-3. CRUD Kelas
+3. Riwayat Kelas Siswa
 
-4. Tahun Ajaran
+4. Generate QR Code
 
-5. User Management
+5. Scan QR
 
-6. Riwayat Kelas Siswa
+6. Absensi Harian
 
-7. QR Code Siswa
+7. Jadwal Sekolah
+
+8. Hari Libur
+
+9. Laporan
+
+10. Activity Log
 
 ---
 
@@ -247,13 +279,13 @@ Database Design:
 95%
 
 Backend:
-25%
+50%
 
 Frontend:
-10%
+45%
 
 Testing:
-10%
+60%
 
 Deployment:
 0%
@@ -264,8 +296,10 @@ Deployment:
 
 Dashboard Admin dan Dashboard Guru sudah berjalan.
 
-Role Middleware sudah berjalan.
+Master Data Guru, Kelas, dan Siswa telah selesai.
 
-Admin dan Guru berhasil login ke dashboard masing-masing.
+Seluruh CRUD Master Data telah menggunakan AdminLTE.
 
-Tahap berikutnya fokus ke Master Data.
+Validasi dasar CRUD telah diterapkan.
+
+Tahap berikutnya fokus pada Tahun Ajaran sebagai fondasi sebelum QR Code dan Absensi.

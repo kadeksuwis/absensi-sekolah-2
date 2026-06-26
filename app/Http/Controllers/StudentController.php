@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
 use App\Models\SchoolClass;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -28,19 +28,21 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nis' => 'required|unique:students',
-            'nama' => 'required',
-            'class_id' => 'required',
+            'nis'      => 'required|unique:students',
+            'nama'     => 'required',
+            'class_id' => 'required|exists:school_classes,id',
         ]);
 
         Student::create([
-            'nis' => $request->nis,
-            'nama' => $request->nama,
-            'class_id' => $request->class_id,
-            'qr_token' => Str::uuid(),
+            'nis'       => $request->nis,
+            'nama'      => $request->nama,
+            'class_id'  => $request->class_id,
+            'qr_token'  => (string) Str::uuid(),
         ]);
 
-        return redirect()->route('students.index');
+        return redirect()
+            ->route('students.index')
+            ->with('success', 'Data siswa berhasil ditambahkan.');
     }
 
     public function edit(int $id)
@@ -57,18 +59,20 @@ class StudentController extends Controller
         $student = Student::findOrFail($id);
 
         $request->validate([
-            'nis' => 'required|unique:students,nis,' . $student->id,
-            'nama' => 'required',
-            'class_id' => 'required',
+            'nis'      => 'required|unique:students,nis,' . $student->id,
+            'nama'     => 'required',
+            'class_id' => 'required|exists:school_classes,id',
         ]);
 
         $student->update([
-            'nis' => $request->nis,
-            'nama' => $request->nama,
+            'nis'      => $request->nis,
+            'nama'     => $request->nama,
             'class_id' => $request->class_id,
         ]);
 
-        return redirect()->route('students.index');
+        return redirect()
+            ->route('students.index')
+            ->with('success', 'Data siswa berhasil diperbarui.');
     }
 
     public function destroy(int $id)
