@@ -52,6 +52,72 @@ Hapus:
 
 ---
 
+# VERSI 2.10.0
+
+Tanggal:
+2026-06-27
+
+Status:
+Development
+
+## Fitur Baru
+
+* CRUD Tahun Ajaran
+* Halaman Data Tahun Ajaran
+* Tambah Tahun Ajaran
+* Edit Tahun Ajaran
+* Hapus Tahun Ajaran
+* Status Tahun Ajaran Aktif / Nonaktif
+* Preview Tahun Ajaran otomatis (contoh: 2026 → 2026/2027)
+* Dropdown Tahun Awal
+* Sidebar Tahun Ajaran pada Admin
+
+---
+
+## Perbaikan
+
+* Tahun ajaran tidak lagi diinput manual.
+* Tahun akhir dibuat otomatis berdasarkan Tahun Awal.
+* Validasi tahun awal unik.
+* Hanya satu Tahun Ajaran yang dapat berstatus Aktif.
+* Saat Tahun Ajaran baru diaktifkan, Tahun Ajaran sebelumnya otomatis menjadi Nonaktif.
+* Tampilan CRUD diseragamkan dengan modul Guru, Kelas, dan Siswa.
+* Pesan sukses ditambahkan pada proses Tambah, Edit, dan Hapus.
+
+---
+
+## Perubahan Database
+
+Tambah tabel:
+
+* academic_years
+
+Tambah kolom:
+
+* start_year
+
+---
+
+## Catatan
+
+* Tahun Ajaran menjadi dasar seluruh proses akademik.
+* QR Token siswa tetap digunakan dari kelas 7 sampai lulus.
+* Data siswa tidak berubah saat naik kelas.
+* Riwayat kelas akan menggunakan Tahun Ajaran sebagai acuan utama.
+
+---
+
+## Tahap Berikutnya
+
+1. Student Class History (Riwayat Kelas Siswa)
+2. Kenaikan Kelas Otomatis
+3. Import Excel Siswa
+4. Generate QR Code
+5. Cetak QR Card
+6. Scan QR Absensi
+7. Dashboard Monitoring
+8. Laporan Absensi
+
 # VERSI 2.9.0
 
 Tanggal:

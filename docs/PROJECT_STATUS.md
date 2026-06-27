@@ -41,7 +41,7 @@ Authentication:
 Laravel Breeze
 
 Template:
-AdminLTE (Belum Dipasang)
+AdminLTE 3
 
 Version Control:
 Git + GitHub
@@ -142,11 +142,13 @@ Sedang Dikembangkan
 
 ✓ Tampilan AdminLTE untuk seluruh Master Data
 
+✓ Tahun Ajaran
+
 # FITUR DALAM PENGERJAAN
 
 MASTER DATA
 
-□ Tahun Ajaran
+
 
 □ User Management
 
@@ -230,6 +232,8 @@ SISTEM
 
 ✓ jobs
 
+✓ academic_years
+
 ---
 
 # ROLE SISTEM
@@ -279,13 +283,13 @@ Database Design:
 95%
 
 Backend:
-50%
+60%
 
 Frontend:
-45%
+55%
 
 Testing:
-60%
+70%
 
 Deployment:
 0%
