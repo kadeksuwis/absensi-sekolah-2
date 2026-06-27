@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\SchoolClassController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\AcademicYearController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -79,6 +80,24 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::delete('/admin/students/{id}', [StudentController::class, 'destroy'])
         ->name('students.destroy');
+
+    Route::get('/admin/academic-years', [AcademicYearController::class, 'index'])
+        ->name('academic-years.index');
+
+    Route::get('/admin/academic-years/create', [AcademicYearController::class, 'create'])
+        ->name('academic-years.create');
+
+    Route::post('/admin/academic-years', [AcademicYearController::class, 'store'])
+        ->name('academic-years.store');
+
+    Route::get('/admin/academic-years/{id}/edit', [AcademicYearController::class, 'edit'])
+        ->name('academic-years.edit');
+
+    Route::put('/admin/academic-years/{id}', [AcademicYearController::class, 'update'])
+        ->name('academic-years.update');
+
+    Route::delete('/admin/academic-years/{id}', [AcademicYearController::class, 'destroy'])
+        ->name('academic-years.destroy');
 });
 
 Route::middleware(['auth', 'role:guru'])->group(function () {

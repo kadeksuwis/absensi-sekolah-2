@@ -330,6 +330,12 @@ return [
         ],
 
         [
+            'text' => 'Tahun Ajaran',
+            'url'  => 'admin/academic-years',
+            'icon' => 'fas fa-calendar-alt',
+        ],
+
+        [
             'header' => 'ABSENSI',
         ],
 
