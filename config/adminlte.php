@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>ABSENSI</b> SMPN 9',
-    'logo_img' => 'public/images/logo-smp9.png',
+    'logo_img' => 'images/logo-smp9.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -354,6 +354,11 @@ return [
             'text' => 'Riwayat Absensi',
             'url'  => 'admin/attendance',
             'icon' => 'fas fa-calendar-check',
+        ],
+        [
+            'text' => 'Pengaturan Sekolah',
+            'url'  => 'admin/school-setting',
+            'icon' => 'fas fa-cogs',
         ],
 
         [

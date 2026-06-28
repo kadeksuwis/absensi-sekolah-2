@@ -7,6 +7,9 @@ use App\Http\Controllers\SchoolClassController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AcademicYearController;
 use App\Http\Controllers\StudentClassHistoryController;
+use App\Http\Controllers\SchoolScheduleController;
+use App\Http\Controllers\SchoolSettingController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -117,6 +120,29 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::delete('/admin/student-class-histories/{id}', [StudentClassHistoryController::class, 'destroy'])
         ->name('student-class-histories.destroy');
+
+    Route::get('/admin/school-schedules', [SchoolScheduleController::class, 'index'])
+        ->name('school-schedules.index');
+
+    Route::get('/admin/school-schedules/create', [SchoolScheduleController::class, 'create'])
+        ->name('school-schedules.create');
+
+    Route::post('/admin/school-schedules', [SchoolScheduleController::class, 'store'])
+        ->name('school-schedules.store');
+
+    Route::get('/admin/school-schedules/{id}/edit', [SchoolScheduleController::class, 'edit'])
+        ->name('school-schedules.edit');
+
+    Route::put('/admin/school-schedules/{id}', [SchoolScheduleController::class, 'update'])
+        ->name('school-schedules.update');
+
+    Route::delete('/admin/school-schedules/{id}', [SchoolScheduleController::class, 'destroy'])
+        ->name('school-schedules.destroy');
+    Route::get('/admin/school-setting', [SchoolSettingController::class, 'index'])
+        ->name('school-setting.index');
+
+    Route::put('/admin/school-setting', [SchoolSettingController::class, 'update'])
+        ->name('school-setting.update');
 });
 
 Route::middleware(['auth', 'role:guru'])->group(function () {

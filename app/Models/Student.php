@@ -23,9 +23,6 @@ class Student extends Model
     }
     public function classHistories()
     {
-        return $this->hasMany(
-            StudentClassHistory::class,
-            'academic_year_id'
-        );
+        return $this->hasMany(StudentClassHistory::class);
     }
 }
