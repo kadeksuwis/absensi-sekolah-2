@@ -52,6 +52,67 @@ Hapus:
 
 ---
 
+# VERSI 3.0.0
+
+Tanggal:
+2026-06-27
+
+Status:
+Development
+
+## Fitur Baru
+
+* CRUD Riwayat Kelas Siswa
+* Master Data Riwayat Kelas
+* Relasi Siswa ↔ Tahun Ajaran ↔ Kelas
+* Nomor Urut Siswa per Kelas
+* Status Riwayat Siswa (Aktif, Naik, Lulus, Pindah, Keluar)
+* Tahun Ajaran Aktif Otomatis pada Form Riwayat Kelas
+
+---
+
+## Perbaikan
+
+* Validasi satu siswa hanya boleh memiliki satu riwayat pada Tahun Ajaran yang sama
+* Filter siswa otomatis pada form tambah riwayat
+* Konfirmasi hapus menggunakan popup bawaan browser
+* Tampilan CRUD disesuaikan dengan standar AdminLTE proyek
+
+---
+
+## Perubahan Database
+
+Tambah tabel:
+
+* student_class_histories
+
+Kolom baru:
+
+* student_id
+* academic_year_id
+* class_id
+* class_number
+* status
+
+---
+
+## Catatan
+
+* QR Token siswa tetap menggunakan data pada tabel students sehingga tidak berubah meskipun siswa naik kelas.
+* Status riwayat (Aktif, Naik, Lulus, Pindah, Keluar) baru disimpan sebagai data dan akan digunakan pada modul kenaikan kelas serta absensi.
+
+---
+
+## Tahap Berikutnya
+
+1. Generate QR Code Siswa
+2. Cetak Kartu QR
+3. Scan QR
+4. Absensi Masuk
+5. Absensi Pulang
+6. Dashboard Statistik
+7. Laporan Absensi
+
 # VERSI 2.10.0
 
 Tanggal:
