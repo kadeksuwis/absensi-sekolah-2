@@ -22,4 +22,8 @@ class SchoolClass extends Model
     {
         return $this->hasMany(Student::class, 'class_id');
     }
+    public function classHistories()
+    {
+        return $this->hasMany(StudentClassHistory::class, 'class_id');
+    }
 }

@@ -15,4 +15,11 @@ class AcademicYear extends Model
         'is_active',
 
     ];
+    public function classHistories()
+    {
+        return $this->hasMany(
+            StudentClassHistory::class,
+            'academic_year_id'
+        );
+    }
 }

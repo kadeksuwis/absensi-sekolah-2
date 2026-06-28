@@ -334,6 +334,11 @@ return [
             'url'  => 'admin/academic-years',
             'icon' => 'fas fa-calendar-alt',
         ],
+        [
+            'text' => 'Riwayat Kelas',
+            'url'  => 'admin/student-class-histories',
+            'icon' => 'fas fa-history',
+        ],
 
         [
             'header' => 'ABSENSI',

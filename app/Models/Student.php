@@ -21,4 +21,11 @@ class Student extends Model
             'class_id'
         );
     }
+    public function classHistories()
+    {
+        return $this->hasMany(
+            StudentClassHistory::class,
+            'academic_year_id'
+        );
+    }
 }

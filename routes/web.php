@@ -6,6 +6,7 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\SchoolClassController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\AcademicYearController;
+use App\Http\Controllers\StudentClassHistoryController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -98,6 +99,24 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::delete('/admin/academic-years/{id}', [AcademicYearController::class, 'destroy'])
         ->name('academic-years.destroy');
+
+    Route::get('/admin/student-class-histories', [StudentClassHistoryController::class, 'index'])
+        ->name('student-class-histories.index');
+
+    Route::get('/admin/student-class-histories/create', [StudentClassHistoryController::class, 'create'])
+        ->name('student-class-histories.create');
+
+    Route::post('/admin/student-class-histories', [StudentClassHistoryController::class, 'store'])
+        ->name('student-class-histories.store');
+
+    Route::get('/admin/student-class-histories/{id}/edit', [StudentClassHistoryController::class, 'edit'])
+        ->name('student-class-histories.edit');
+
+    Route::put('/admin/student-class-histories/{id}', [StudentClassHistoryController::class, 'update'])
+        ->name('student-class-histories.update');
+
+    Route::delete('/admin/student-class-histories/{id}', [StudentClassHistoryController::class, 'destroy'])
+        ->name('student-class-histories.destroy');
 });
 
 Route::middleware(['auth', 'role:guru'])->group(function () {
